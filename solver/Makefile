@@ -13,7 +13,7 @@ CFLAGS	=	-Wall -Wextra
 
 CPPFLAGS	=	-I./include
 
-LDFLAGS	=	-L./lib -lmy
+LDFLAGS	=	-L./../lib -lfree
 
 NAME	=	solver
 
@@ -24,7 +24,6 @@ CC	=	gcc
 all:	$(NAME)
 
 $(NAME): $(OBJ)
-	make -C lib/my/
 	$(CC) -o $(NAME) $(OBJ) $(LDFLAGS)
 
 debug:	CFLAGS += -g3
@@ -36,13 +35,7 @@ clean:
 fclean:	clean
 	$(RM) $(NAME)
 	$(RM) $(NAME_TESTS)
-	make fclean -C lib/my/
-
-tests_run:
-	make -C lib/my/
-	$(CC) -o $(NAME_TESTS) $(CPPFLAGS) $(SRC_TESTS) $(LDFLAGS)
-	./$(NAME_TESTS)
 
 re: fclean all
 
-.PHONY: all fclean re clean $(NAME) tests_run debug
+.PHONY: all fclean re clean $(NAME) debug

@@ -6,15 +6,18 @@
 ##
 
 all:
+	make -C lib/my/
 	make -C generator/
 	make -C solver/
 
 clean:
+	make clean -C lib/my/
 	make clean -C generator/
 	make clean -C solver/
 
 
 fclean:	clean
+	make fclean-C lib/my/
 	make fclean -C generator/
 	make fclean -C solver/
 
