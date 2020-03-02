@@ -25,6 +25,10 @@ debug:
 	make debug -C generator/
 	make debug -C solver/
 
+tests_run:
+	make -C lib/my/
+	make tests_run -C generator/
+
 re: fclean all
 
-.PHONY: all fclean re clean debug
+.PHONY: all fclean re clean debug tests_run

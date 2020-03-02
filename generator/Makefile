@@ -5,7 +5,8 @@
 ## makefile
 ##
 
-SRC	=
+SRC	=	src/main.c		\
+		src/create_base_maze.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -17,8 +18,6 @@ LDFLAGS	=	-L./../lib -lfree
 
 NAME	=	generator
 
-NAME_TESTS	=	unit_tests
-
 CC	=	gcc
 
 all:	$(NAME)
@@ -28,6 +27,13 @@ $(NAME): $(OBJ)
 
 debug:	CFLAGS += -g3
 debug:	re
+
+tests_run: SRC += tests/tests_generator.c
+tests_run: SRC := $(filter-out src/main.c, $(SRC))
+tests_run: NAME := unit_tests
+tests_run:
+	$(CC) -o $(NAME) $(SRC) $(LDFLAGS) -lcriterion --coverage -I./include
+	./$(NAME)
 
 clean:
 	$(RM) $(OBJ)
