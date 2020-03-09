@@ -5,9 +5,9 @@
 ** main.c
 */
 
-#incldude "generator.h"
+#include "generator.h"
 
 int main(int ac, char **av)
 {
-    return (0);
+    return (84);
 }
