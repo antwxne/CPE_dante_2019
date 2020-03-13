@@ -10,6 +10,36 @@
 
 #include "my.h"
 
+typedef enum direction {
+    up,
+    down,
+    left,
+    right,
+} direct_e;
+
+typedef enum type {
+    wall,
+    path,
+} type_e;
+
+typedef struct pos
+{
+    int y;
+    int x;
+} position_t;
+
+typedef struct list
+{
+    position_t pos;
+    int type;
+    struct list *next;
+    struct list *prev;
+} list_t;
+
+void display_mask(int **mask);
+void display_maze(char **maze);
 char **create_base(int width, int height);
+int **create_mask(int width, int height);
+int algo(list_t **list, char ***maze, int ***mask);
 
 #endif /* !GENERATOR_H_ */

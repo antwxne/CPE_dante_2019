@@ -15,11 +15,6 @@ Test (create_base, test1)
     int size = (sizeof(char)*width)*(sizeof(char *)*height);
     char **got = create_base(width, height);
     int i = 0;
-    /* char *expected[] = {"XXXXX", */
-    /*                     "XXXXX", */
-    /*                     "XXXXX", */
-    /*                     "XXXXX", */
-    /*                     "XXXXX"}; */
     char expected[] = "XXXXX";
 
     for (; got[i] != NULL; i++)

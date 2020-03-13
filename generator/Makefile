@@ -5,8 +5,9 @@
 ## makefile
 ##
 
-SRC	=	src/main.c		\
+SRC	=	src/main.c				\
 		src/create_base_maze.c	\
+		src/the_algo.c 			\
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -40,7 +41,6 @@ clean:
 
 fclean:	clean
 	$(RM) $(NAME)
-	$(RM) $(NAME_TESTS)
 
 re: fclean all
 
