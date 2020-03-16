@@ -1,28 +1,38 @@
 /*
 ** EPITECH PROJECT, 2020
-** dant generator
+** generator
 ** File description:
-** main.c
+** main
 */
 
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <time.h>
 #include "generator.h"
 #include "my.h"
+
+static void display(char **maze)
+{
+    for (int i = 0; maze[i] != NULL; i++)
+        printf("%s\n", maze[i]);
+}
 
 int main(int ac, char **av)
 {
     char **maze;
-    int **mask;
-    list_t *list = NULL;
 
-    srand(__TIME__);
-    if (ac != 3)
+    srand(time(NULL));
+    if (ac != 4)
         return (84);
-    maze = create_base(atoi(av[1]), atoi(av[2]));
-    mask = create_mask(atoi(av[1]), atoi(av[2]));
-    display_maze(maze);
-    printf("\n\n\n");
-    display_mask(mask);
-    algo(list, &maze, &mask);
+    if (strcmp(av[3], "[perfect]") == 0) {
+        maze = maze_base_p(atoi(av[1]), atoi(av[2]));
+        display(maze);
+    }
+    if (strcmp(av[3], "[imperfect]") == 0) {
+        maze = maze_base_u(atoi(av[1]), atoi(av[2]));
+        display(maze);
+    }
+    my_free_arr(maze, 0);
     return (0);
 }

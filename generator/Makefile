@@ -5,9 +5,9 @@
 ## makefile
 ##
 
-SRC	=	src/main.c				\
-		src/create_base_maze.c	\
-		src/the_algo.c 			\
+SRC	=	src/main.c					\
+		src/generator_perfect.c		\
+		src/generator_unperfect.c 	\
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -28,13 +28,6 @@ $(NAME): $(OBJ)
 
 debug:	CFLAGS += -g3
 debug:	re
-
-tests_run: SRC += tests/tests_generator.c
-tests_run: SRC := $(filter-out src/main.c, $(SRC))
-tests_run: NAME := unit_tests
-tests_run:
-	$(CC) -o $(NAME) $(SRC) $(LDFLAGS) -lcriterion --coverage -I./include
-	./$(NAME)
 
 clean:
 	$(RM) $(OBJ)
