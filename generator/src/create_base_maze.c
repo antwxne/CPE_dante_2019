@@ -29,21 +29,23 @@ void display_maze(char **maze)
 
 int **create_mask(int width, int height)
 {
-    int **maze = malloc(sizeof(int *)*(height + 1));
+    int **mask = malloc(sizeof(int *)*(height + 1));
     int y = 0;
 
-    if (maze == NULL)
+    if (mask == NULL)
         return (NULL);
     for (; y < height; y++) {
-        maze[y] = malloc(sizeof(int)*(width + 1));
-        if (maze[y] == NULL)
+        mask[y] = malloc(sizeof(int)*(width + 1));
+        if (mask[y] == NULL)
             return (NULL);
         for (int x = 0; x < width; x++)
-            maze[y][x] = 0;
-        maze[y][width] = -1;
+            mask[y][x] = 0;
+        if (y == 0)
+            mask[0][0] = 1;
+        mask[y][width] = -1;
     }
-    maze[height] = NULL;
-    return (maze);
+    mask[height] = NULL;
+    return (mask);
 }
 
 static char **in_out(char **maze)

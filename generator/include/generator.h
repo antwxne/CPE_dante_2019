@@ -15,6 +15,10 @@ typedef enum direction {
     down,
     left,
     right,
+    wall_up,
+    wall_down,
+    wall_left,
+    wall_right,
 } direct_e;
 
 typedef enum type {
