@@ -20,8 +20,8 @@ static inline around_t check_around(char **maze, pos_t pos, around_t around)
 static inline char **in_out(char **maze, int width, int height)
 {
     maze[0][0] = '*';
-    maze[height - 1][width - 2] = '*';
-    maze[height - 1][width - 1] = '*';
+    for (int i = 0; i < width; i++)
+        maze[height - 1][i] = '*';
     return (maze);
 }
 
@@ -59,7 +59,7 @@ static inline char **algo(char **maze, int width, int height)
     return (in_out(maze, width, height));
 }
 
-char **create_base_p(int width, int height)
+char **create_base_i(int width, int height)
 {
     char **maze = malloc(sizeof(char *)*(height + 1));
     int y = 0;

@@ -5,8 +5,10 @@
 ## makefile
 ##
 
-SRC	=	src/main.c 		\
-		src/binary_perf.c 	\
+SRC	=	src/main.c 				\
+		src/binary_perf.c 		\
+		src/binary_imp.c 		\
+		src/error_handling.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
