@@ -10,7 +10,7 @@
 
 #include "my.h"
 
-char **maze_base_u(int x, int y);
-char **maze_base_p(int x, int y);
+char **create_base(int x, int y);
+char **algo(char **maze, int width, int height);
 
 #endif /* !GENERATOR_H_ */

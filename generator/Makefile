@@ -5,9 +5,8 @@
 ## makefile
 ##
 
-SRC	=	src/main.c					\
-		src/generator_perfect.c		\
-		src/generator_unperfect.c 	\
+SRC	=	src/main.c 		\
+		src/binary_perf.c 	\
 
 OBJ	=	$(SRC:.c=.o)
 
