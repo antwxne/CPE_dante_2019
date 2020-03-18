@@ -5,7 +5,16 @@
 ** solveur
 */
 
-int main(void)
+#include <stdlib.h>
+#include <stdio.h>
+#include "my.h"
+#include "solveur.h"
+
+int main(int ac, char **av)
 {
-    return (0);
+
+    if (ac == 2) {
+        return (solving(av[1]));
+    }
+    return (84);
 }

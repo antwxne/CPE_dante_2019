@@ -5,7 +5,8 @@
 ## makefile
 ##
 
-SRC	=	src/main.c
+SRC	=	src/main.c			\
+		src/load_maze.c 	\
 
 OBJ	=	$(SRC:.c=.o)
 
