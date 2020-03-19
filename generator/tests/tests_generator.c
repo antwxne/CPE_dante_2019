@@ -6,7 +6,8 @@
 */
 
 #include <criterion/criterion.h>
-#include "generator.h"
+#include "maze.h"
+#include "error_handling.h"
 #include "my.h"
 
 Test (parfait, test_small)
@@ -72,7 +73,6 @@ Test (error_handling, test_ok2)
 
     cr_assert_eq(got, expected);
 }
-
 
 Test (error_handling, test_fail1)
 {
