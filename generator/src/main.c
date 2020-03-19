@@ -9,10 +9,18 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
-// #include "generator.h"
-#include "maze.h"
-#include "error_handling.h"
+#include "generator.h"
 #include "my.h"
+
+static void display(char **maze)
+{
+    for (int i = 0; maze[i] != NULL; i++) {
+        if (maze[i + 1] != NULL)
+            printf("%s\n", maze[i]);
+        else
+            printf(maze[i]);
+    }
+}
 
 int main(int ac, char **av)
 {

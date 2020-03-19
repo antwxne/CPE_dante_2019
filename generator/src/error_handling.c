@@ -1,22 +1,13 @@
 /*
 ** EPITECH PROJECT, 2020
-** generator
+** CPE_dante_2019
 ** File description:
 ** error_handling
 */
 
-#include <string.h>
-#include <stdlib.h>
+#include "error_handling.h"
 
-static inline int parse_arg(char *arg)
-{
-    for (int i = 0; arg[i] != 0; i++)
-        if (!(arg[i] >= '0' && arg[i] <= '9'))
-            return (-1);
-    return (0);
-}
-
-static inline int error_handling(int ac, char **av)
+int error_handling(int ac, char **av)
 {
     if (ac < 3 || ac > 4)
         return (-1);

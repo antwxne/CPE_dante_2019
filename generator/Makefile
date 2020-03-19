@@ -6,6 +6,8 @@
 ##
 
 SRC	=	src/main.c 				\
+		src/error_handling.c 	\
+		src/create_maze.c 		\
 
 OBJ	=	$(SRC:.c=.o)
 
