@@ -16,7 +16,7 @@ static inline int parse_arg(char *arg)
     return (0);
 }
 
-int error_handling(int ac, char **av)
+static inline int error_handling(int ac, char **av)
 {
     if (ac < 3 || ac > 4)
         return (-1);
