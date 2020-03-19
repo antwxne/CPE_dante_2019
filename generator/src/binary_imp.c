@@ -22,7 +22,7 @@ char **create_base_i(int width, int height)
         for (int x = 0; x < width; x++)
             maze[y][x] = 'X';
         maze[y][width] = 0;
-    }
+    } 
     maze[y] = NULL;
     return (algo(maze, width, height));
 }
