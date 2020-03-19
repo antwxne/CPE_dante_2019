@@ -26,7 +26,6 @@ typedef struct around {
 } around_t;
 
 typedef struct list {
-
     struct list *left;
     struct list *right;
 } list_t;
