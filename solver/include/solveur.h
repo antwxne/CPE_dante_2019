@@ -8,8 +8,10 @@
 #ifndef SOLVEUR_H_
 #define SOLVEUR_H_
 
-char **tab_maze(char *filepath);
-char *read_maze(char *filepath);
-int solving(char *filepath);
+#include "struct.h"
+
+int start(char *filepath);
+void display(char **maze);
+char **algo(char **maze, pos_t const size);
 
 #endif /* !SOLVEUR_H_ */

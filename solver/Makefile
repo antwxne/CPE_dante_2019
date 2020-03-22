@@ -7,6 +7,7 @@
 
 SRC	=	src/main.c			\
 		src/load_maze.c 	\
+		src/new_solv.c 		\
 
 OBJ	=	$(SRC:.c=.o)
 
