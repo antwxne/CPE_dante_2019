@@ -6,10 +6,20 @@
 */
 
 #include <stdlib.h>
+#include <stdio.h>
 #include <unistd.h>
 #include "solveur.h"
 #include "struct.h"
 
+void display(char **maze)
+{
+    for (int i = 0; maze[i] != NULL; i++) {
+        if (maze[i + 1] != NULL)
+            printf("%s\n", maze[i]);
+        else
+            printf(maze[i]);
+    }
+}
 
 static int dir(char ***maze, pos_t pos, pos_t const size, int i)
 {
@@ -48,7 +58,7 @@ char **algo(char **maze, pos_t const size)
     int out = dir(&maze, (pos_t) {0, 0}, size, 0);
 
     if (out == -1) {
-        write(2, "No path found\n", 15);
+        write(2, "solution not found\n", 20);
         exit(84);
     }
     maze = mod_maze(maze);

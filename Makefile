@@ -27,6 +27,7 @@ debug:
 
 tests_run:
 	make -C lib/my/
+	make tests_run -C solver/
 	make tests_run -C generator/
 
 re: fclean all

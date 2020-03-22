@@ -31,6 +31,14 @@ $(NAME): $(OBJ)
 debug:	CFLAGS += -g3
 debug:	re
 
+tests_run: SRC += tests/tests_solveur.c
+tests_run: SRC := $(filter-out src/main.c, $(SRC))
+tests_run: NAME := unit_tests
+tests_run:
+	make -C ../lib/my/
+	$(CC) -o $(NAME) $(SRC) $(LDFLAGS) -lcriterion --coverage -I./include
+	./$(NAME)
+
 clean:
 	$(RM) $(OBJ)
 

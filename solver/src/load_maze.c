@@ -82,9 +82,17 @@ static pos_t get_size(char **maze)
 int start(char *filepath)
 {
     char *buff = read_maze(filepath);
-    char **maze = tab_maze(buff);
-    pos_t size = get_size(maze);
+    char **maze;
+    pos_t size;
 
+    if (buff == NULL)
+        return (84);
+    maze = tab_maze(buff);
+    if (maze == NULL) {
+        free(buff);
+        return (84);
+    }
+    size = get_size(maze);
     maze = algo(maze, size);
     display(maze);
     free(maze);

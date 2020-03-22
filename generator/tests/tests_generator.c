@@ -7,6 +7,7 @@
 
 #include <criterion/criterion.h>
 #include "maze.h"
+#include "generator.h"
 #include "error_handling.h"
 #include "my.h"
 
