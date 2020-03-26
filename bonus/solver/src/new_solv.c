@@ -62,8 +62,8 @@ char **algo(char **maze, pos_t const size)
     int out = dir(&maze, (pos_t) {0, 0}, size, 0);
 
     if (out == -1) {
-        write(2, "solution not found\n", 20);
-        exit(84);
+        printf("no solution found");
+        exit(0);
     }
     maze = mod_maze(maze);
     return (maze);
