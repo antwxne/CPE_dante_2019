@@ -38,21 +38,21 @@ static char *read_maze(char *filepath)
     return (buff);
 }
 
-static int custom_len(char *str, char c)
+static unsigned int custom_len(char const *str, char const c)
 {
-    int count = 0;
+    unsigned int count = 0;
 
-    for (int i = 0; str[i] != '\0'; i++)
+    for (unsigned int i = 0; str[i] != '\0'; i++)
         if (str[i] == c)
             count += 1;
     return (count + 1);
 }
 
-char **tab_maze(char *buff)
+static char **tab_maze(char *buff)
 {
-    int len = custom_len(buff, '\n');
+    unsigned int len = custom_len(buff, '\n');
     char **maze = malloc(sizeof(char *) * (len + 2));
-    int i = 1;
+    unsigned int i = 1;
     char *line;
 
     if (maze == NULL)
@@ -67,7 +67,7 @@ char **tab_maze(char *buff)
     return (maze);
 }
 
-static pos_t get_size(char **maze)
+static pos_t get_size(char const **maze)
 {
     unsigned int lines = 0;
     unsigned int cols = 0;
@@ -92,9 +92,9 @@ int start(char *filepath)
         free(buff);
         return (84);
     }
-    size = get_size(maze);
+    size = get_size((char const **) maze);
     maze = algo(maze, size);
-    display(maze);
+    display((char const **) maze);
     free(maze);
     free(buff);
     return (0);

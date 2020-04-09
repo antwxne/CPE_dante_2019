@@ -2,11 +2,11 @@
 ** EPITECH PROJECT, 2020
 ** CPE_dante_2019
 ** File description:
-** perfect
+** maze
 */
 
-#ifndef PERFECT_H_
-#define PERFECT_H_
+#ifndef MAZE_H_
+#define MAZE_H_
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -59,4 +59,4 @@ static inline char **mod_maze(char **maze, pos_t pos, around_t around)
     return (maze);
 }
 
-#endif /* !PERFECT_H_ */
+#endif /* !MAZE_H_ */

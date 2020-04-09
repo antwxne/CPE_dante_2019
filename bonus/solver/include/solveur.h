@@ -11,7 +11,7 @@
 #include "struct.h"
 
 int start(char *filepath);
-void display(char **maze);
+void display(char const **maze);
 char **algo(char **maze, pos_t const size);
 
 #endif /* !SOLVEUR_H_ */

@@ -11,9 +11,9 @@
 #include "solveur.h"
 #include "struct.h"
 
-void display(char **maze)
+void display(char const **maze)
 {
-    for (int i = 0; maze[i] != NULL; i++) {
+    for (unsigned int i = 0; maze[i] != NULL; i++) {
         if (maze[i + 1] != NULL)
             printf("%s\n", maze[i]);
         else
