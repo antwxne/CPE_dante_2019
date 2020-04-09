@@ -10,7 +10,7 @@
 
 #include "struct.h"
 
-int start(char *filepath);
+int start(char const *filepath);
 void display(char const **maze);
 char **algo(char **maze, pos_t const size);
 

@@ -15,7 +15,7 @@
 #include "solveur.h"
 #include "struct.h"
 
-static char *read_maze(char *filepath)
+static char *read_maze(char const *filepath)
 {
     struct stat s;
     int fd = open(filepath, O_RDONLY);
@@ -79,7 +79,7 @@ static pos_t get_size(char const **maze)
     return ((pos_t) {lines, cols});
 }
 
-int start(char *filepath)
+int start(char const *filepath)
 {
     char *buff = read_maze(filepath);
     char **maze;

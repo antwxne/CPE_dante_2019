@@ -79,7 +79,7 @@ static pos_t get_size(char const **maze)
     return ((pos_t) {lines, cols});
 }
 
-int start(char *filepath)
+int start(char const *filepath)
 {
     char *buff = read_maze(filepath);
     char **maze;
