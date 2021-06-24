@@ -1,0 +1,7 @@
+/.idea/
+*.o
+*.a
+solver/solver
+generator/generator
+bonus/solver/solver
+bonus/generator/generator
