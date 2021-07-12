@@ -1,4 +1,4 @@
-# Dante
+# Dante ![c](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
 
 >The purpose of this project is to create a maze generator and solver.
 
